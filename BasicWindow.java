@@ -4,6 +4,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+//Neki komentari tu i tamo
+
 public class BasicWindow extends Frame {
 
 	public BasicWindow() {
