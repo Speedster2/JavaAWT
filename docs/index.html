@@ -38,7 +38,8 @@
             let color = document.getElementById("color");
             let InputID = document.getElementById("InputID");
             if(document.getElementById(InputID.value) != null){
-                document.getElementById(InputID.value).setAttribute("style","background-color:"+color.value + " !important;")
+                document.getElementById(InputID.value).style.backgroundColor = color.value;
+                //document.getElementById(InputID.value).setAttribute("style","background-color:"+color.value + " !important;")
             }
         }
         
