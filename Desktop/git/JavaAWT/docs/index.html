@@ -57,6 +57,11 @@
                 //temp.setAttribute("style", "width:"+ rangeWidth.value +"% !important;");
             }
         }
+        function UpdateEverything(){
+            UpdateRangeHeight();
+            UpdateRangeWidth();
+            UpdateColor;
+        }
     </script>
   </head>
   
@@ -81,7 +86,7 @@
       <input type="text" id="range2" onchange="UpdateRangeWidth()"><br>
       <input type="color" id="color" onchange="UpdateColor()">
       <input type=text placeholder="ID" id="InputID">
-      <button type="button" onclick="Test()">Test</button>
+      <button type="button" onclick="UpdateEverything()">Test</button>
       <br>
       <input placeholder="AppendID" type="text" id="append"><br>
           <button type="button" onclick="append()">Append it!</button>
