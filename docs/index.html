@@ -23,17 +23,13 @@
     </style>
     <script>
         function append(){
-           $("body").append($(".append").val());
+           $("body").append($("#append").val());
         }
         $(function(){
             $("#dialog").dialog();
         })
     function Test(){
-        let color = document.getElementById("color");
-        let InputID = document.getElementById("InputID");
-        console.log(document.getElementById(InputID.value).getAttribute("id") + " " + color.value);
-        if(document.getElementById(InputID.value) != null){
-            document.getElementById(InputID.value).setAttribute("style","background-color:"+color.value + " !important;")
+            console.log("It works..");
         }
     }
         function UpdateColor(){
@@ -49,8 +45,7 @@
             let rangeHeight = document.getElementById("range1");
             let InputID = document.getElementById("InputID");
             if(document.getElementById(InputID.value) != null){
-                let temp = document.getElementById(InputID.value);
-                temp.style.height = rangeHeight.value;
+                document.getElementById(InputID.value).style.height = rangeHeight.value;
                 //temp.setAttribute("style","height:" + rangeHeight.value + "% !important;");
             }
         }
@@ -58,10 +53,14 @@
             let rangeWidth = document.getElementById("range2");
             let InputID = document.getElementById("InputID");
             if(document.getElementById(InputID.value) != null){
-                let temp = document.getElementById(InputID.value);
-                temp.style.width = rangeWidth.value;
+                document.getElementById(InputID.value).style.width = rangeWidth.value;
                 //temp.setAttribute("style", "width:"+ rangeWidth.value +"% !important;");
             }
+        }
+        function UpdateEverything(){
+            UpdateRangeHeight();
+            UpdateRangeWidth();
+            UpdateColor;
         }
     </script>
   </head>
@@ -76,7 +75,7 @@
     </ul>
       <form id="form1">
       <input type="text" name="Text" form="form1">
-          <button type="submit" onclick="Pr()" form="form1">Klikni</button>
+          <button type="submit" onclick="test()" form="form1">Klikni</button>
       </form>
       <hr>
       <div id="dialog" title="Window">
@@ -87,7 +86,7 @@
       <input type="text" id="range2" onchange="UpdateRangeWidth()"><br>
       <input type="color" id="color" onchange="UpdateColor()">
       <input type=text placeholder="ID" id="InputID">
-      <button type="button" onclick="Test()">Test</button>
+      <button type="button" onclick="UpdateEverything()">Test</button>
       <br>
       <input placeholder="AppendID" type="text" id="append"><br>
           <button type="button" onclick="append()">Append it!</button>
