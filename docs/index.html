@@ -24,9 +24,8 @@
     <script>
         function append(){
            //$("body").append($("#append").val());
-            let InputID = $("#InputID");
-            if($(InputID.val()) != undefined){
-                $(InputID.val()).append($("#append").val());
+            if($($("#InputID").val()) != undefined){
+                $($("#InputID").val()).append($("#append").val());
             }
             else{
                $("body").append($("#append").val());
