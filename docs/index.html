@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-    <title>Ver 1.42</title>
+    <title>Ver 1.43.01</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -25,7 +25,7 @@
         function append(){
            //$("body").append($("#append").val());
             let InputID = $("#InputID");
-            if($(InputID.val()) != null){
+            if($(InputID.val()) != undefined){
                 $(InputID.val()).append($("#append").val());
             }
             else{
