@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-    <title>Naslov stranice</title>
+    <title>Ver 1.43.02</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -23,7 +23,13 @@
     </style>
     <script>
         function append(){
-           $("body").append($("#append").val());
+           //$("body").append($("#append").val());
+            if($($("#InputID").val()) != undefined){
+                $($("#InputID").val()).append($("#append").val());
+            }
+            else{
+               $("body").append($("#append").val());
+            }
         }
         $(function(){
             $("#dialog").dialog();
@@ -59,7 +65,7 @@
         function UpdateEverything(){
             UpdateRangeHeight();
             UpdateRangeWidth();
-            UpdateColor;
+            UpdateColor();
         }
     </script>
   </head>
