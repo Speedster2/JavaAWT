@@ -1,5 +1,5 @@
 import java.awt.*;
-import java.awt.event.MouseAdapter;
+import java.awt.event.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -14,17 +14,12 @@ public class BasicWindow extends Frame {
 		add(can);
 		can.setBackground(Color.white);
 		can.setBounds(rect);
-		can.addMouseListener(new MouseAdapter() {
+		can.addMouseMotionListener(new MouseMotionAdapter() {
 
-			private int size = 15;
+			private int size = 10;
 			
 			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
+			public void mouseDragged(MouseEvent e) {
 				// TODO Auto-generated method stub
 				Graphics g = can.getGraphics();
 				g.setColor(Color.red);
@@ -32,23 +27,9 @@ public class BasicWindow extends Frame {
 				Point p = e.getPoint();
 				System.out.println(p.getLocation().toString());
 				g.fillOval(p.x - size/2, p.y - size/2, size, size);
+				repaint();
 			}
 
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
 			
 		});
 		setBounds(rect);
@@ -94,4 +75,7 @@ public class BasicWindow extends Frame {
 		this.add(east, BorderLayout.EAST);
 
 	}
+	public static void main(String[] args){
+		new BasicWindow();
+	};
 }
